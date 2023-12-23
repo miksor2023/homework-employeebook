@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 
 @ResponseStatus(value = HttpStatus.BANDWIDTH_LIMIT_EXCEEDED, reason = "EmployeeStorageIsFull")
 public class EmployeeStorageIsFullException extends RuntimeException {
-    public EmployeeStorageIsFullException() {
+    public EmployeeStorageIsFullException(String s) {
         super();
     }
 }

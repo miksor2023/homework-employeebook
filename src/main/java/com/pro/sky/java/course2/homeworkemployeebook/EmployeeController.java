@@ -24,24 +24,19 @@ public class EmployeeController {
     @GetMapping("/add")
     public Employee addEmployee (@RequestParam(name = "firstName", required = true) String firstName,
                                  @RequestParam(name = "lastName", required = true) String lastName) {
-        Employee employee = new Employee(firstName, lastName);
-            employeeService.addEmployee(employee);
-        return employee;
+        return employeeService.addEmployee(firstName, lastName);
     }
 
     @GetMapping("/find")
     public Employee findEmployee (@RequestParam(name = "firstName", required = true) String firstName,
                                   @RequestParam(name = "lastName", required = true) String lastName) {
-        Employee employee = new Employee(firstName, lastName);
-        employeeService.findEmployee(employee);
-        return employee;
+        return employeeService.findEmployee(firstName, lastName);
     }
     @GetMapping("/remove")
     public Employee removeEmployee (@RequestParam(name = "firstName", required = true) String firstName,
                                     @RequestParam(name = "lastName", required = true) String lastName) {
-        Employee employee = new Employee(firstName, lastName);
-        employeeService.removeEmployee(employee);
-        return employee;
+
+        return employeeService.removeEmployee(firstName, lastName);
     }
     @GetMapping("/print")
     public List<Employee> printEmployeeList() {
@@ -49,7 +44,6 @@ public class EmployeeController {
     }
     @GetMapping("/load")
     public List<Employee> loadEmployeeList() {
-        employeeService.loadEmployeeList();
-        return employeeService.returnEmployeeList();
+        return employeeService.loadEmployeeList();
     }
 }

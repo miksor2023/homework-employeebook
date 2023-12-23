@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 
 @ResponseStatus(value = HttpStatus.ACCEPTED, reason = "EmployeeAlreadyAdded")
 public class EmployeeAlreadyAddedException extends RuntimeException {
-    public EmployeeAlreadyAddedException() {
+    public EmployeeAlreadyAddedException(String s) {
         super();
     }
 }
